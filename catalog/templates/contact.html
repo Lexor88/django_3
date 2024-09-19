@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+</head>
+<body>
+    <h1>Контактные данные</h1>
+    <ul>
+        {% if contacts %}
+            {% for contact in contacts %}
+                <li>
+                    <strong>{{ contact.name }}</strong> (<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>): {{ contact.message }}
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>Нет контактных данных.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
